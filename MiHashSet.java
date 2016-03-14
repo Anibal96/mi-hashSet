@@ -71,6 +71,34 @@ public class MiHashSet
     }
 
     /**
+     * Metodo que elimina del conjunto el elemento dado. 
+     * Si no existiera devuelve falso; 
+     * si existía en el conjunto devuelve verdadero.
+     */
+    public boolean remove(int elemento)
+    {
+        boolean eliminado = false;
+        int[] coleccion1;
+        for(int i = 0;i < coleccion.length && !eliminado;i++){
+            if(coleccion[i] == elemento){
+                coleccion1 = new int[(coleccion.length - 1)];
+                int cont = 0;
+                while(coleccion.length > cont && cont < i){
+                    coleccion1[cont] = coleccion[cont];
+                    cont++;
+                }
+                while(coleccion.length > cont+1){
+                    coleccion1[cont] = coleccion[cont+1];
+                    cont++;
+                }
+                coleccion = coleccion1;
+                eliminado = true;
+            }
+        }
+        return eliminado;
+    }
+
+    /**
      * Metodo que devuelve el número de elementos del conjunto.
      */
     public int size()
@@ -99,9 +127,9 @@ public class MiHashSet
         boolean noIgual = true;
         if(coleccion.length == otroConjunto.size()){
             for (int i = 0;i < coleccion.length && noIgual;i++){
-                    if(!otroConjunto.contains(coleccion[i])){
-                        noIgual = false;
-                    }
+                if(!otroConjunto.contains(coleccion[i])){
+                    noIgual = false;
+                }
             }
         }
         return noIgual;
