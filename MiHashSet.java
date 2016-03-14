@@ -39,4 +39,12 @@ public class MiHashSet
         }
         return noEncontrado;
     }
+    
+    /**
+     * Metodo que vacía el conjunto.
+     */
+    public void clear()
+    {
+        coleccion = new int[0];
+    }
 }
