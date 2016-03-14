@@ -25,7 +25,7 @@ public class MiHashSet
     {
         boolean noEncontrado = true;
         for(int i = 0; i < coleccion.length && noEncontrado; i++){
-            if(valor == coleccion[1]){
+            if(valor == coleccion[i]){
                 noEncontrado = false;
             }
         }
@@ -76,5 +76,17 @@ public class MiHashSet
     public int size()
     {
         return coleccion.length;
+    }
+    
+    /**
+     * Metodo que devuelve una cadena conteniendo todos los elementos del conjunto separados por comas y entre corchetes.
+     */
+    public String toString()
+    {
+        String cadena = "[" + coleccion[0] + "]";
+        for(int i = 1; i < coleccion.length; i++){
+            cadena = cadena + " ,[" + coleccion[i] + "]";
+        }
+        return cadena;
     }
 }
