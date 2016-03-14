@@ -39,7 +39,7 @@ public class MiHashSet
         }
         return noEncontrado;
     }
-    
+
     /**
      * Metodo que vacía el conjunto.
      */
@@ -47,7 +47,7 @@ public class MiHashSet
     {
         coleccion = new int[0];
     }
-    
+
     /**
      *  Metodo que devuelve verdadero si el conjunto contiene el elemento, falso en caso contrario.
      */
@@ -61,7 +61,7 @@ public class MiHashSet
         }
         return encontrado;
     }
-    
+
     /**
      * Metodo que devuelve verdadero si el conjunto no contiene elementos.
      */
@@ -69,7 +69,7 @@ public class MiHashSet
     {
         return coleccion.length == 0;
     }
-    
+
     /**
      * Metodo que devuelve el número de elementos del conjunto.
      */
@@ -77,16 +77,33 @@ public class MiHashSet
     {
         return coleccion.length;
     }
-    
+
     /**
      * Metodo que devuelve una cadena conteniendo todos los elementos del conjunto separados por comas y entre corchetes.
      */
     public String toString()
     {
-        String cadena = "[" + coleccion[0] + "]";
+        String cadena = "[" + coleccion[0] + "] ";
         for(int i = 1; i < coleccion.length; i++){
             cadena = cadena + " ,[" + coleccion[i] + "]";
         }
         return cadena;
+    }
+
+    /**
+     * Metodo que devuelve verdadero si el parámetro es igual al conjunto sobre el que se invoca 
+     * y falso en otro caso.
+     */
+    public boolean equals(MiHashSet otroConjunto)
+    {
+        boolean noIgual = true;
+        if(coleccion.length == otroConjunto.size()){
+            for (int i = 0;i < coleccion.length && noIgual;i++){
+                    if(!otroConjunto.contains(coleccion[i])){
+                        noIgual = false;
+                    }
+            }
+        }
+        return noIgual;
     }
 }
