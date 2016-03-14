@@ -61,4 +61,12 @@ public class MiHashSet
         }
         return encontrado;
     }
+    
+    /**
+     * Metodo que devuelve verdadero si el conjunto no contiene elementos.
+     */
+    public boolean isEmpty()
+    {
+        return coleccion.length == 0;
+    }
 }
