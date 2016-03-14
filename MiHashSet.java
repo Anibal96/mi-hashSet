@@ -54,8 +54,8 @@ public class MiHashSet
     public boolean contains(int elemento)
     {
         boolean encontrado = false;
-        for(int i = 0; i < coleccion.length && encontrado; i++){
-            if(elemento == coleccion[1]){
+        for(int i = 0; i < coleccion.length && !encontrado; i++){
+            if(coleccion[i] == elemento){
                 encontrado = true;
             }
         }
@@ -111,10 +111,14 @@ public class MiHashSet
      */
     public String toString()
     {
-        String cadena = "[" + coleccion[0] + "] ";
-        for(int i = 1; i < coleccion.length; i++){
-            cadena = cadena + " ,[" + coleccion[i] + "]";
+        String cadena = "[";
+        if(coleccion.length != 0){
+            cadena = cadena + coleccion[0];
+            for(int i = 1; i < coleccion.length; i++){
+                cadena = cadena + ", " + coleccion[i];
+            }
         }
+        cadena = cadena + "]";
         return cadena;
     }
 
@@ -124,14 +128,14 @@ public class MiHashSet
      */
     public boolean equals(MiHashSet otroConjunto)
     {
-        boolean noIgual = true;
+        boolean igual = true;
         if(coleccion.length == otroConjunto.size()){
-            for (int i = 0;i < coleccion.length && noIgual;i++){
-                if(!otroConjunto.contains(coleccion[i])){
-                    noIgual = false;
+            for (int i = 0;i < coleccion.length && igual;i++){
+                if(!(otroConjunto.contains(coleccion[i]))){
+                    igual = false;
                 }
             }
         }
-        return noIgual;
+        return igual;
     }
 }
