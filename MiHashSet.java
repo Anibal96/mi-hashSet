@@ -69,4 +69,12 @@ public class MiHashSet
     {
         return coleccion.length == 0;
     }
+    
+    /**
+     * Metodo que devuelve el número de elementos del conjunto.
+     */
+    public int size()
+    {
+        return coleccion.length;
+    }
 }
