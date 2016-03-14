@@ -47,4 +47,18 @@ public class MiHashSet
     {
         coleccion = new int[0];
     }
+    
+    /**
+     *  Metodo que devuelve verdadero si el conjunto contiene el elemento, falso en caso contrario.
+     */
+    public boolean contains(int elemento)
+    {
+        boolean encontrado = false;
+        for(int i = 0; i < coleccion.length && encontrado; i++){
+            if(elemento == coleccion[1]){
+                encontrado = true;
+            }
+        }
+        return encontrado;
+    }
 }
