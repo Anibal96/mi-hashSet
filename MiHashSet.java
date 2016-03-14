@@ -131,10 +131,13 @@ public class MiHashSet
         boolean igual = true;
         if(coleccion.length == otroConjunto.size()){
             for (int i = 0;i < coleccion.length && igual;i++){
-                if(!(otroConjunto.contains(coleccion[i]))){
+                if(otroConjunto.contains(coleccion[i])){
                     igual = false;
                 }
             }
+        }
+        else{
+            igual = false;
         }
         return igual;
     }
